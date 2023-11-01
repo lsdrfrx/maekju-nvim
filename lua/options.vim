@@ -21,6 +21,7 @@ set nobackup
 set showcmd
 set showmode
 set history=1000
+set splitbelow
 
 filetype on
 filetype plugin on
