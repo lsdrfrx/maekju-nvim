@@ -9,6 +9,7 @@ set number
 set relativenumber
 set cursorline
 set autoindent
+set undofile
 " set cc=80
 set clipboard=unnamedplus
 set incsearch
