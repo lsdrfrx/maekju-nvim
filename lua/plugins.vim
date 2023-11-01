@@ -4,6 +4,8 @@ call plug#begin()
 Plug 'kylechui/nvim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'powerman/vim-plugin-ruscmd'
+Plug 'tpope/vim-fugitive'
 
 " Status bar and file explorer
 Plug 'nvim-tree/nvim-web-devicons'
@@ -18,6 +20,8 @@ Plug 'willothy/veil.nvim'
 " Color themes
 Plug 'zaldih/themery.nvim'
 Plug 'folke/tokyonight.nvim'
+
+Plug 'nvim-treesitter/nvim-treesitter'
 
 call plug#end()
 
