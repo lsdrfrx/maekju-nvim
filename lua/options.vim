@@ -22,6 +22,7 @@ set showcmd
 set showmode
 set history=1000
 set splitbelow
+set scrolloff=5
 
 filetype on
 filetype plugin on
