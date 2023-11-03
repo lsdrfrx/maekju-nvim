@@ -13,3 +13,4 @@ nnoremap <silent> <A-l> :wincmd l<CR>
 
 nnoremap <leader>g :Git<CR>
 nnoremap <leader>gd :Gvdiffsplit<CR>
+nnoremap <leader>gp :Git push<CR>
