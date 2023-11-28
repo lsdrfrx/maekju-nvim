@@ -1,17 +1,16 @@
 set nocompatible
+set clipboard=unnamedplus
 set expandtab
 set smarttab
 set ai
 set si
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set number
 set relativenumber
 set cursorline
 set autoindent
 set undofile
-" set cc=80
-set clipboard=unnamedplus
 set incsearch
 set hlsearch
 set ignorecase
@@ -22,6 +21,8 @@ set showcmd
 set showmode
 set history=1000
 set scrolloff=5
+set termguicolors
+set splitbelow
 
 filetype on
 filetype plugin on
