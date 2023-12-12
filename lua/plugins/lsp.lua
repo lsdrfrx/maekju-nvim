@@ -10,14 +10,15 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function()
 			local lsp = require("lspconfig")
-			lsp.dartls.setup({
-				cmd = { "dart", "language-server", "--protocol=lsp" },
-			})
+			-- lsp.dartls.setup({
+			-- 	cmd = { "dart", "language-server", "--protocol=lsp" },
+			-- })
 			lsp.pyright.setup({})
 			lsp.lua_ls.setup({})
 			lsp.bashls.setup({})
 			lsp.vimls.setup({})
 			lsp.clangd.setup({})
+			lsp.tsserver.setup({})
 		end,
 	},
 	{
