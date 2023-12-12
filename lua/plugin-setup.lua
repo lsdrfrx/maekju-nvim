@@ -1,63 +1,82 @@
-return {
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable",
+		lazypath,
+	})
+end
+
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
+
 	-- Plugins without setup
-	{ "troydm/zoomwintab.vim" },
-	{ "nvim-tree/nvim-web-devicons" },
-	{ "rafamadriz/friendly-snippets" },
-	{ "akinsho/flutter-tools.nvim" },
-	{ "tpope/vim-commentary" },
-	{ "nvim-lua/plenary.nvim" },
-	{ "powerman/vim-plugin-ruscmd" },
-	{ "tpope/vim-fugitive" },
-	{ "nvim-treesitter/nvim-treesitter" },
-	{ "ThePrimeagen/harpoon" },
+	{ "nvim-tree/nvim-web-devicons" }, -- Pretty icons
+	{ "rafamadriz/friendly-snippets" }, -- Useful snippets
+	{ "nvim-lua/plenary.nvim" }, -- Dependency for a lot of plugins
+	{ "jbyuki/nabla.nvim" }, -- LaTeX rendering
+	{ "tpope/vim-commentary" }, -- Comment action
+	{ "powerman/vim-plugin-ruscmd" }, -- Vim works on russian layout :^)
+	{ "tpope/vim-fugitive" }, -- Git integration
+	{ "nvim-treesitter/nvim-treesitter" }, -- Treesitter
+	{ "ThePrimeagen/harpoon" }, -- Comfy marks for jumping between files
 
 	-- Plugins with empty setup
 	{
-		"williamboman/mason.nvim",
+		"Pocco81/true-zen.nvim", -- Zen mode
+		config = function()
+			require("true-zen").setup({})
+		end,
+	},
+	{
+		"akinsho/flutter-tools.nvim", -- Tools for Flutter development
+		lazy = false,
+		config = true,
+	},
+	{
+		"williamboman/mason.nvim", -- Easy LSP installation
 		config = function()
 			require("mason").setup({})
 		end,
 	},
 	{
-		"williamboman/mason-lspconfig.nvim",
+		"3rd/image.nvim", -- Render images inside Vim
+		config = true,
+	},
+	{
+		"williamboman/mason-lspconfig.nvim", -- Lspconfig integration for mason
 		config = function()
 			require("mason-lspconfig").setup({})
 		end,
 	},
 	{
-		"kylechui/nvim-surround",
+		"kylechui/nvim-surround", -- Working with surrounds
 		config = function()
 			require("nvim-surround").setup({})
 		end,
 	},
 	{
-		"windwp/nvim-autopairs",
+		"windwp/nvim-autopairs", -- Autopair plugin, pretty simple
 		config = function()
 			require("nvim-autopairs").setup({})
 		end,
 	},
 	{
-		"phaazon/mind.nvim",
-		branch = "v2.2",
-		config = function()
-			require("mind").setup({})
-		end,
-	},
-	{
-		"nvim-lualine/lualine.nvim",
+		"nvim-lualine/lualine.nvim", -- Bottom statusline
 		config = function()
 			require("lualine").setup({})
 		end,
 	},
 	{
-		"willothy/veil.nvim",
+		"filipdutescu/renamer.nvim", -- Quick variable renaming
+		branch = "master",
 		config = function()
-			require("veil").setup({})
+			require("renamer").setup({})
 		end,
-	},
-	{
-		"weilbith/nvim-code-action-menu",
-		cmd = "CodeActionMenu",
 	},
 
 	-- Plugins with custom setup
@@ -66,4 +85,7 @@ return {
 	require("plugins.conform"),
 	require("plugins.lsp"),
 	require("plugins.telescope"),
-}
+	require("plugins.neorg"),
+	require("plugins.alpha"),
+	require("plugins.project"),
+})
