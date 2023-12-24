@@ -8,6 +8,7 @@ end)
 map("n", "<C-BS>", ":w<CR>:bd<CR>", { silent = true })
 map("n", "<ESC>", ":noh<CR><ESC>", { silent = true })
 map("i", "<C-BS>", "<C-w>", { silent = true })
+map("i", "<A-CR>", "<cmd>lua vim.lsp.buf.code_action()<CR>", { silent = true })
 
 -- Telescope keymaps
 map("n", "<leader>ff", ":Telescope find_files<CR>", { silent = true })
