@@ -58,6 +58,8 @@ vim.cmd("filetype on")
 vim.cmd("filetype plugin on")
 vim.cmd("filetype indent on")
 vim.cmd("syntax on")
+vim.cmd("set textwidth=80")
+vim.cmd("set fo+=t")
 
 vim.diagnostic.config({
 	float = true,
