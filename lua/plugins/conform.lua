@@ -5,7 +5,6 @@ return {
       formatters_by_ft = {
         lua = { "stylua" },
         python = { "black", "isort" },
-        dart = { "dart_format" },
       },
     })
   end,
