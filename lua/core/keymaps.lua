@@ -14,9 +14,6 @@ map("i", "<A-CR>", "<cmd>lua vim.lsp.buf.code_action()<CR>", { silent = true })
 map("n", "<leader>ff", ":Telescope find_files<CR>", { silent = true })
 map("n", "<leader>fg", ":Telescope live_grep<CR>", { silent = true })
 map("n", "<leader>b", ":Telescope buffers<CR>", { silent = true })
-map("n", "<leader>f", function()
-	require("telescope").extensions.flutter.commands()
-end)
 
 -- Move between panes
 map("n", "<A-h>", ":wincmd h<CR>", { silent = true })
@@ -47,3 +44,13 @@ end, { noremap = true, silent = true })
 map("n", "<F2>", function()
 	require("renamer").rename()
 end, { noremap = true, silent = true })
+
+map("n", "<F5>", function()
+  local extension = vim.bo.filetype
+
+  if extension == "python" then
+    vim.cmd("!python " .. vim.fn.expand("%"))
+  end
+
+
+end, { noremap = true })

@@ -33,19 +33,10 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"akinsho/flutter-tools.nvim", -- Tools for Flutter development
-		lazy = false,
-		config = true,
-	},
-	{
 		"williamboman/mason.nvim", -- Easy LSP installation
 		config = function()
 			require("mason").setup({})
 		end,
-	},
-	{
-		"3rd/image.nvim", -- Render images inside Vim
-		config = true,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim", -- Lspconfig integration for mason
@@ -85,7 +76,6 @@ require("lazy").setup({
 	require("plugins.conform"),
 	require("plugins.lsp"),
 	require("plugins.telescope"),
-	require("plugins.neorg"),
 	require("plugins.alpha"),
 	require("plugins.project"),
 })

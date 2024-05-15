@@ -61,6 +61,12 @@ vim.cmd("syntax on")
 vim.cmd("set textwidth=80")
 vim.cmd("set fo+=t")
 
+vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
+vim.cmd("highlight NormalNC guibg=NONE ctermbg=NONE")
+vim.cmd("highlight NvimTreeNormal guibg=NONE ctermbg=NONE")
+vim.cmd("highlight NvimTreeNormalNC guibg=NONE ctermbg=NONE")
+
+
 vim.diagnostic.config({
 	float = true,
 	virtual_text = false,
