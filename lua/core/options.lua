@@ -27,8 +27,6 @@ opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldlevel = 20
 opt.foldlevelstart = 20
 
-vim.cmd("highlight Folded guibg=NONE")
-vim.cmd("highlight FoldColumn ctermfg=NONE guifg=NONE")
 
 -- Indent and tabs
 opt.autoindent = true
@@ -58,8 +56,11 @@ vim.cmd("filetype on")
 vim.cmd("filetype plugin on")
 vim.cmd("filetype indent on")
 vim.cmd("syntax on")
-vim.cmd("set textwidth=80")
+vim.cmd("set textwidth=500")
 vim.cmd("set fo+=t")
+
+vim.cmd("highlight Folded guibg=NONE")
+vim.cmd("highlight FoldColumn ctermfg=NONE guifg=NONE")
 
 vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
 vim.cmd("highlight NormalNC guibg=NONE ctermbg=NONE")
