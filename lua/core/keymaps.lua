@@ -57,3 +57,5 @@ end, { noremap = true })
 map("n", "K", function()
 	vim.diagnostic.open_float()
 end)
+
+map("n", "<C-K>", vim.lsp.buf.hover)
