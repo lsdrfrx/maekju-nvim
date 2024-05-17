@@ -20,7 +20,6 @@ require("lazy").setup({
 	{ "tpope/vim-commentary" }, -- Comment action
 	{ "powerman/vim-plugin-ruscmd" }, -- Vim works on russian layout :^)
 	{ "tpope/vim-fugitive" }, -- Git integration
-	{ "nvim-treesitter/nvim-treesitter" }, -- Treesitter
 	{ "ThePrimeagen/harpoon" }, -- Comfy marks for jumping between files
 
 	-- Plugins with empty setup
@@ -74,6 +73,7 @@ require("lazy").setup({
 	require("plugins.conform"),
 	require("plugins.lsp"),
 	require("plugins.telescope"),
+  require("plugins.treesitter"),
 	require("plugins.alpha"),
 	require("plugins.project"),
 })
