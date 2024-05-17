@@ -27,6 +27,12 @@ require("lazy").setup({
 			require("true-zen").setup({})
 		end,
 	},
+  {
+    'NvChad/nvim-colorizer.lua',
+    config = function ()
+      require('colorizer').setup({})
+    end
+  },
 	{
 		"williamboman/mason.nvim", -- Easy LSP installation
 		config = function()
