@@ -16,7 +16,6 @@ require("lazy").setup({
 
 	-- Plugins without setup
 	{ "nvim-tree/nvim-web-devicons" }, -- Pretty icons
-	{ "rafamadriz/friendly-snippets" }, -- Useful snippets
 	{ "nvim-lua/plenary.nvim" }, -- Dependency for a lot of plugins
 	{ "tpope/vim-commentary" }, -- Comment action
 	{ "powerman/vim-plugin-ruscmd" }, -- Vim works on russian layout :^)
