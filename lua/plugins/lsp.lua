@@ -12,17 +12,23 @@ return {
 	{ "hrsh7th/cmp-cmdline" },
 	{ "hrsh7th/cmp-path" },
 	{ "onsails/lspkind.nvim" },
+	{ "williamboman/mason.nvim" },
+	{ "williamboman/mason-lspconfig.nvim" },
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			local lsp = require("lspconfig")
-			lsp.pyright.setup({})
-			lsp.lua_ls.setup({})
-			lsp.bashls.setup({})
-			lsp.vimls.setup({})
-			lsp.clangd.setup({})
-			lsp.tsserver.setup({})
-      lsp.cmake.setup({})
+      require("mason").setup({})
+      local mason_lspconfig = require("mason-lspconfig")
+			local lspconfig = require("lspconfig")
+      mason_lspconfig.setup({
+        automatic_installed = true
+      })
+      mason_lspconfig.setup_handlers({
+        function(server)
+          lspconfig[server].setup({})
+        end
+      })
+
 		end,
 	},
 	{

@@ -34,18 +34,6 @@ require("lazy").setup({
     end
   },
 	{
-		"williamboman/mason.nvim", -- Easy LSP installation
-		config = function()
-			require("mason").setup({})
-		end,
-	},
-	{
-		"williamboman/mason-lspconfig.nvim", -- Lspconfig integration for mason
-		config = function()
-			require("mason-lspconfig").setup({})
-		end,
-	},
-	{
 		"kylechui/nvim-surround", -- Working with surrounds
 		config = function()
 			require("nvim-surround").setup({})
