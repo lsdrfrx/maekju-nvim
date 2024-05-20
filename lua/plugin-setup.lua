@@ -46,12 +46,6 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"nvim-lualine/lualine.nvim", -- Bottom statusline
-		config = function()
-			require("lualine").setup({})
-		end,
-	},
-	{
 		"filipdutescu/renamer.nvim", -- Quick variable renaming
 		branch = "master",
 		config = function()
@@ -67,5 +61,6 @@ require("lazy").setup({
 	require("plugins.telescope"),
   require("plugins.treesitter"),
 	require("plugins.alpha"),
+  require("plugins.lualine"),
 	require("plugins.project"),
 })
