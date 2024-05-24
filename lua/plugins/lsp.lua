@@ -14,6 +14,7 @@ return {
 	{ "onsails/lspkind.nvim" },
 	{ "williamboman/mason.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
+  { "kdheepak/cmp-latex-symbols" },
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
@@ -45,6 +46,9 @@ return {
 						ellipsis_char = "...",
 					}),
 				},
+        experimental = {
+          ghost_text = true,
+        },
 				snippet = {
 					expand = function(args)
 						require("luasnip").lsp_expand(args.body)
@@ -66,6 +70,13 @@ return {
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" }, -- For luasnip users.
+          { name = 'nvim_lua' },
+          {
+            name = "latex_symbols",
+            option = {
+              strategy = 0,
+            },
+          },
 				}, {
 					{ name = "buffer" },
 				}),
