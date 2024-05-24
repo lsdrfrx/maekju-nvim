@@ -63,4 +63,5 @@ require("lazy").setup({
 	require("plugins.alpha"),
   require("plugins.lualine"),
 	require("plugins.project"),
+  require("plugins.cursorline"),
 })
