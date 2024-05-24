@@ -66,10 +66,25 @@ vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
 vim.cmd("highlight NormalNC guibg=NONE ctermbg=NONE")
 vim.cmd("highlight NvimTreeNormal guibg=NONE ctermbg=NONE")
 vim.cmd("highlight NvimTreeNormalNC guibg=NONE ctermbg=NONE")
+vim.cmd("highlight DiagnosticVirtualTextWarn guibg=NONE ctermbg=NONE")
+vim.cmd("highlight DiagnosticVirtualTextError guibg=NONE ctermbg=NONE")
+vim.cmd("highlight DiagnosticVirtualTextInfo guibg=NONE ctermbg=NONE")
+vim.cmd("highlight DiagnosticVirtualTextHint guibg=NONE ctermbg=NONE")
+vim.cmd("highlight DiagnosticVirtualTextOk guibg=NONE ctermbg=NONE")
 
 
 vim.diagnostic.config({
-	float = true,
-	virtual_text = false,
+	float = {
+    style = "minimal",
+    focusable = false,
+    header = "",
+    prefix = "",
+  },
+	virtual_text = {
+    source = "if_many",
+    prefix = " ",
+  },
+  update_in_insert = true,
 	signs = true,
+  severity_sort = true,
 })
