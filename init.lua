@@ -3,6 +3,7 @@ vim.g.maplocalleader = ","
 
 if vim.g.neovide then
   vim.g.neovide_fullscreen = true
+  vim.o.guifont = "DejaVuSansM Nerd Font:h13"
 end
 
 require("plugin-setup")
