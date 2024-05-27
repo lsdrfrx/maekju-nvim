@@ -28,6 +28,16 @@ require("lazy").setup({
 		end,
 	},
   {
+    "lewis6991/gitsigns.nvim",
+    config = function ()
+      require("gitsigns").setup({})
+    end,
+  },
+  {
+    "folke/todo-comments.nvim",
+    opts = {},
+  },
+  {
     'NvChad/nvim-colorizer.lua',
     config = function ()
       require('colorizer').setup({})
