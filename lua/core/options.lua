@@ -74,7 +74,8 @@ vim.cmd("highlight DiagnosticVirtualTextOk guibg=NONE ctermbg=NONE")
 
 
 vim.diagnostic.config({
-	float = {
+  signs = false,
+  float = {
     style = "minimal",
     focusable = false,
     header = "",
@@ -85,6 +86,5 @@ vim.diagnostic.config({
     prefix = " ",
   },
   update_in_insert = true,
-	signs = true,
   severity_sort = true,
 })
