@@ -1,11 +1,11 @@
 return {
-  {
-    "L3MON4D3/LuaSnip",
-    dependencies = { "rafamadriz/friendly-snippets" },
-    config = function ()
-      require("luasnip.loaders.from_vscode").lazy_load()
-    end
-  },
+	{
+		"L3MON4D3/LuaSnip",
+		dependencies = { "rafamadriz/friendly-snippets" },
+		config = function()
+			require("luasnip.loaders.from_vscode").lazy_load()
+		end,
+	},
 	{ "saadparwaiz1/cmp_luasnip" },
 	{ "hrsh7th/cmp-nvim-lsp" },
 	{ "hrsh7th/cmp-buffer" },
@@ -14,22 +14,35 @@ return {
 	{ "onsails/lspkind.nvim" },
 	{ "williamboman/mason.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
-  { "kdheepak/cmp-latex-symbols" },
+	{ "kdheepak/cmp-latex-symbols" },
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-      require("mason").setup({})
-      local mason_lspconfig = require("mason-lspconfig")
+			require("mason").setup({})
+			local mason_lspconfig = require("mason-lspconfig")
 			local lspconfig = require("lspconfig")
-      mason_lspconfig.setup({
-        automatic_installed = true
-      })
-      mason_lspconfig.setup_handlers({
-        function(server)
-          lspconfig[server].setup({})
-        end
-      })
-
+			mason_lspconfig.setup({
+				automatic_installed = true,
+				ensure_installed = {
+					"bashls",
+					"clangd",
+					"cmake",
+					"dockerls",
+					"docker_compose_language_service",
+					"jsonls",
+					"texlab",
+					"lua_ls",
+					"marksman",
+					"pyright",
+					"vimls",
+					"yamlls",
+				},
+			})
+			mason_lspconfig.setup_handlers({
+				function(server)
+					lspconfig[server].setup({})
+				end,
+			})
 		end,
 	},
 	{
@@ -46,9 +59,9 @@ return {
 						ellipsis_char = "...",
 					}),
 				},
-        experimental = {
-          ghost_text = true,
-        },
+				experimental = {
+					ghost_text = true,
+				},
 				snippet = {
 					expand = function(args)
 						require("luasnip").lsp_expand(args.body)
@@ -70,13 +83,13 @@ return {
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" }, -- For luasnip users.
-          { name = 'nvim_lua' },
-          {
-            name = "latex_symbols",
-            option = {
-              strategy = 0,
-            },
-          },
+					{ name = "nvim_lua" },
+					{
+						name = "latex_symbols",
+						option = {
+							strategy = 0,
+						},
+					},
 				}, {
 					{ name = "buffer" },
 				}),
