@@ -10,6 +10,7 @@ map("i", "<A-CR>", "<cmd>lua vim.lsp.buf.code_action()<CR>", { silent = true })
 map("n", "<leader>ff", ":Telescope find_files<CR>", { silent = true })
 map("n", "<leader>fg", ":Telescope live_grep<CR>", { silent = true })
 map("n", "<leader>b", ":Telescope buffers<CR>", { silent = true })
+map("n", "<leader>fb", ":Telescope file_browser<CR>", { silent = true })
 
 -- Move between panes
 map("n", "<A-h>", ":wincmd h<CR>", { silent = true })
@@ -25,16 +26,6 @@ map("n", "<leader>gd", ":Gvdiffsplit<CR>", { silent = true })
 map("n", "<leader>gp", ":Git push<CR>", { silent = true })
 
 --
--- Harpoon keymaps
---
-map("n", "<leader>h", function()
-	require("harpoon.ui").toggle_quick_menu()
-end)
-map("n", "<leader>m", function()
-	require("harpoon.mark").add_file()
-end)
-
---
 -- Code actions keymaps
 --
 map("i", "<F2>", function()
@@ -47,15 +38,15 @@ end, { noremap = true, silent = true })
 
 -- Run current buffer
 map("n", "<F5>", function()
-  local extension = vim.bo.filetype
-  if extension == "python" then
-    vim.cmd("!python " .. vim.fn.expand("%"))
-  end
+	local extension = vim.bo.filetype
+	if extension == "python" then
+		vim.cmd("!python " .. vim.fn.expand("%"))
+	end
 end, { noremap = true })
 
 -- Open float diagnostics
 map("n", "K", function()
 	vim.diagnostic.open_float()
-end)
+end, { silent = true })
 
-map("n", "<C-K>", vim.lsp.buf.hover)
+map("n", "<C-K>", vim.lsp.buf.hover, { silent = true })
